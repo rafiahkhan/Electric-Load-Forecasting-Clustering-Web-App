@@ -263,7 +263,7 @@ electric-load-forecasting/
 
 ## Contact
   For queries or contributions, please contact: Rafia Khan
-Email: rafiah.khan18@gmail.com
+   Email: rafiah.khan18@gmail.com
 
 
 Thank you!
