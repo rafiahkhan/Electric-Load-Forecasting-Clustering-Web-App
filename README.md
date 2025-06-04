@@ -10,6 +10,12 @@
   - LSTM
   - SARIMA
 
+## Demo Video
+
+[Watch the Demo Video](demo/Demo%20Video.mp4)
+
+Click the video above to watch a short demonstration of the app in action.
+
 
 ## Repository Structure
 
