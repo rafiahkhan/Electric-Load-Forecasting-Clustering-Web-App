@@ -12,7 +12,11 @@
 
 ## Demo Video
 
-[Watch the Demo Video](demo/Demo%20Video.mp4)
+[Watch the Demo Video]
+
+https://github.com/user-attachments/assets/e77c7800-3422-4979-aa4a-27ffe72c51a9
+
+(demo/Demo%20Video.mp4)
 
 Click the video above to watch a short demonstration of the app in action.
 
