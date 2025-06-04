@@ -253,7 +253,7 @@ electric-load-forecasting/
 - **Frontend Upgrades**  
   - Replace static `<img>` with interactive Chart.js or Plotly visualizations  
   - Add a real-time data feed (e.g., Kafka → Spark Streaming)  
-  - Improve mobile responsiveness and UI styling  
+  - Improve mobile responsiveness and UI styling.  
 
 
 ## Acknowledgments
