@@ -1,0 +1,446 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #2A7B9B;  /* Changed to primary gradient color */
+  --primary-light: #57C785;  /* Changed to secondary gradient color */
+  --primary-dark: #EDDD53;   /* Changed to third gradient color */
+  --secondary-color: #4cc9f0;
+  --text-color: #2b2d42;
+  --text-light: #8d99ae;
+  --background-color: #f8f9fa;
+  --card-color: #ffffff;
+  --success-color: #4ade80;
+  --warning-color: #fbbf24;
+  --danger-color: #f87171;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --transition: all 0.3s ease;
+}
+
+/* Body and container */
+body {
+  font-family: "Roboto", sans-serif;
+  line-height: 2.5;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  background-image: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+  min-height: 5vh; /* Make sure the body takes full viewport height */
+  height: 90%;  /* Set body height to 100% of the screen */
+  overflow: auto;  /* Hide default page scrollbars */
+/* Hide default page scrollbars */
+
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar with Buttons */
+.sidebar {
+  width: 250px;
+  padding: 20px;
+  /*background-color: #6d75a3;*/
+  background-color: var(--card-color);
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+  background-image: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%); /* Gradient header */
+
+}
+
+
+/* Tab Button Styles */
+.tab-btn {
+  display: block;
+  width: 100%;
+  padding: 12px 24px;
+  background-color: var(--card-color);
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  margin-bottom: 120px;
+  background-image: linear-gradient(135deg, var(--primary-light), var(--primary-dark)); /* Gradient for buttons */
+}
+
+/* Hover state */
+.tab-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-image: linear-gradient(135deg, #57C785, #2A7B9B); /* Gradient when hovering */
+}
+
+/* Active state */
+.tab-btn.active {
+  background-color: #2A7B9B; /* Solid background when active */
+  color: white;
+  box-shadow: 0 4px 8px rgba(67, 97, 238, 0.3);
+  background-image: linear-gradient(135deg, #57C785, #2A7B9B, #EDDD53); /* Gradient with the third color */
+}
+
+/* Adjust the space above the first button (Clustering) */
+.sidebar .tab-btn:first-child {
+  margin-top: 200%;  /* Adds space above the Clustering button */
+}
+
+
+/* Main Content Styles */
+.main-content {
+  margin-left: 270px;
+  padding: 20px;
+  width: calc(100% - 270px);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Add this if other containers are restricting size */
+.tab-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;                /* Ensure it's full width */
+  justify-content: flex-start; /* Align content to the top */
+  padding: 0 20px;            /* Optional padding */
+}
+
+/* Ensure content inside each tab is centered */
+.tab-pane {
+  display: none;
+}
+
+/* Target the active tab with a specific class */
+.tab-pane.active {
+  display: block;             /* Ensure it's displayed */
+  width: 100%;                /* Full width */
+  min-height: 600px;          /* Minimum height, adjust as needed */
+  height: auto;               /* Auto-adjust height */
+  margin: 0 auto;             /* Center content horizontally */
+  text-align: left;           /* Align text left for readability */
+  padding: 20px;              /* Add padding around the content */
+}
+
+/* Optional: Adjust the width of the content inside help section for better readability */
+.help-content {
+  margin: 0 auto;
+  width: 80%; /* Adjust width as per your preference */
+  max-width: 3000px; /* Set a maximum width */
+  padding: 20px;
+  text-align: left;  /* Align the text to left in the help section */
+}
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 30px 0;
+  background-color: var(--card-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  background-image: linear-gradient(135deg, var(--primary-light) 0%, var(--primary-color) 100%);
+  /* Move the header down */
+  margin-top: 20px;  /* Adjust this value to move the header down */
+  
+  position: relative; /* Ensures we can use the top property */
+  top: 10px; /* Moves the header down by 10px, adjust as needed */
+  overflow: hidden;  /* Keeps the content inside the header from overflowing */
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: white;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Control Panel Styles */
+.control-panel {
+  padding: 20px;
+  background-color: rgba(248, 249, 250, 0.5);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  margin-bottom: 20px;
+  max-width: 10000px; /* Set maximum width */
+  margin: 0 auto;  /* Center align the control panel */
+  text-align: center; /* Align text to center */
+}
+
+button.btn {
+  width: auto;  /* Button takes natural width */
+  padding: 12px 24px;  /* Adjust padding */
+  margin-top: 20px; /* Space from above */
+}
+
+.results-panel {
+  padding: 20px;
+  background-color: var(--card-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  margin-bottom: 20px;
+  width: 100%;               /* Ensure it's full width like .tab-content */
+  max-width: 100%;           /* Ensure it matches the container's width */
+  margin: 0 auto;            /* Center align the panel */
+  text-align: center;        /* Align text to center */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align content to the top */
+  padding: 0 20px;            /* Optional padding */
+
+}
+
+.placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  color: var(--text-light);
+  background-color: rgba(248, 249, 250, 0.5);
+  border-radius: var(--border-radius);
+  padding: 30px;
+  border: 1px dashed #e0e0e0;
+}
+
+/* Ensure the button also aligns with the center */
+.form-group button {
+  margin-top: 20px;
+}
+
+
+
+.error {
+  color: var(--danger-color);
+  padding: 20px;
+  background-color: #fee2e2;
+  border-radius: var(--border-radius);
+  text-align: center;
+  font-weight: 500;
+}
+
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 25px;
+}
+
+/* Make the dropdown smaller */
+.form-group select {
+  width: 50%; /* Adjust dropdown width */
+  padding: 12px 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: var(--transition);
+  background-color: white;
+  margin: 10px 0;  /* Add space around the dropdown */
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.form-group input[type="range"] {
+  width: 100%;
+  margin-right: 10px;
+  height: 6px;
+  -webkit-appearance: none;
+  background: #e0e0e0;
+  border-radius: 5px;
+  outline: none;
+}
+
+.form-group input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.form-group select,
+.form-group input[type="date"] {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: var(--transition);
+  background-color: white;
+}
+
+.form-group select:focus,
+.form-group input[type="date"]:focus {
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
+  outline: none;
+}
+
+.radio-group {
+  display: flex;
+  gap: 180px;
+  background-color: white;
+  padding: 20px;
+  border-radius: var(--border-radius);
+  justify-content: flex-start; /* Align items to the left */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.radio-group label {
+  margin-bottom: 0;
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.radio-group input[type="radio"] {
+  margin-right: 20px;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #e0e0e0;
+  border-radius: 50%;
+  outline: none;
+  transition: var(--transition);
+  position: relative;
+}
+
+.radio-group input[type="radio"]:checked {
+  border-color: var(--primary-color);
+}
+
+.radio-group input[type="radio"]:checked::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+}
+
+/* Footer Styles */
+footer {
+  text-align: center;
+   /* Adjust padding as needed to increase/decrease footer's height */
+  padding: 10px 5px;
+
+  color: white;
+  font-size: 0.9rem;
+  background-color: var(--card-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  background-image: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+
+  margin-top: -50px;  /* Moves the footer up by reducing the top margin */
+  /* You can adjust the value of -10px to make it higher or lower */
+  position: relative; /* Allows us to move the footer relative to its normal position */
+  top: -40px;  /* Moves the footer up; adjust the value as needed */
+  
+  width: calc(100% - 310px); /* Matches the width of the content area minus the sidebar */
+  margin-left: 290px; /* Aligns the footer with the main content */
+  margin-right: 20px;
+  overflow: hidden;
+}
+
+
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+}
+/* Optional: Adjust button size and alignment */
+button.btn {
+  width: auto;  /* Button takes natural width */
+  padding: 12px 24px;  /* Adjust padding */
+  margin-top: 20px; /* Space from above */
+}
+
+/* Center the main heading */
+.help-content h2 {
+  text-align: center; /* Center the "Help & Documentation" heading */
+  margin-bottom: 30px; /* Add space below the heading */
+}
+
+/* Add spacing between sections */
+.help-section {
+  margin-bottom: 30px; /* Space between each section */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 700px) {
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .sidebar {
+    width: 100%;
+    position: relative;
+    padding: 10px;
+  }
+
+  .tab-btn {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .tab-content {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .control-panel h2 {
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    padding: 10px 20px;
+  }
+}
