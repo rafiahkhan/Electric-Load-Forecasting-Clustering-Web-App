@@ -11,8 +11,6 @@
   - SARIMA
 
 
----
-
 ## Repository Structure
 
 ```
@@ -55,7 +53,6 @@ electric-load-forecasting/
               
 ```
 
----
 
 ## Prerequisites
 
@@ -63,7 +60,6 @@ electric-load-forecasting/
 - (Optional) **Node.js 12+** if you plan to extend the frontend build  
 - Recommended: a virtual environment (e.g., `python3 -m venv venv`)
 
----
 
 ## Setup
 
@@ -105,7 +101,6 @@ electric-load-forecasting/
           - City-specific SARIMA → `model/sarima_<city>_daily.pkl`
    - Copy or download your trained `.pkl` and `.h5` files into the `model/` folder.  
      
----
 
 ## Running the Application
 
@@ -155,7 +150,7 @@ electric-load-forecasting/
      1. Enter **k** (number of clusters, e.g., 3)  
      2. Click **Generate Clusters** → a PCA scatter plot colored by cluster labels appears.
 
----
+
 
 ## Application Details
 
@@ -206,11 +201,7 @@ electric-load-forecasting/
         1. Load `LSTM_model.h5` (with custom_objects for `mse`)  
         2. Filter hourly data for `city` & `[start_date, end_date]`  
         3. Plot predicted `demand_mwh` (red line) over time → base64 PNG  
-    - Returns JSON:  
-      ```json
-      { "image": "<base64-encoded PNG>" }
-      ```
-    - If an error occurs (missing data/model), returns `{ "error": "<message>" }`.
+  
 
 ### 2. `templates/index.html`
 
@@ -220,7 +211,6 @@ electric-load-forecasting/
 
 - Custom CSS defines the visual look and feel of the entire application. It includes styling for form elements (inputs, buttons, labels), layout containers (margins, paddings, grid structure), and typography (font families, sizes, colors) to ensure a clean, consistent user interface.
 
----
 
 ## Notebooks & Data Preparation
 
@@ -242,9 +232,6 @@ electric-load-forecasting/
      - **LSTM** → Keras/TensorFlow, save `model/LSTM_model.h5`  
      - **SARIMA** → one model per city, save `model/sarima_<city>_daily.pkl`  
 
----
-
----
 
 ## Future Enhancements
 
@@ -262,23 +249,21 @@ electric-load-forecasting/
   - Add a real-time data feed (e.g., Kafka → Spark Streaming)  
   - Improve mobile responsiveness and UI styling  
 
----
 
 ## Acknowledgments
  
 - Built using: Flask, pandas, scikit-learn, XGBoost, TensorFlow/Keras, statsmodels, and matplotlib.
 
----
 
 ## Contributors
  - Rafia Khan
  - M.Tashfeen Abbasi
  - Laiba Mazhar
 
-## Contact
-  For queries or contributions, please contact:Rafia Khan
-  Email: rafiah.khan18@gmail.com
 
----
+## Contact
+  For queries or contributions, please contact: Rafia Khan
+Email: rafiah.khan18@gmail.com
+
 
 Thank you!
